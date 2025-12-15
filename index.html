@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khushi Nama</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px 20px 20px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-bottom: 2px solid #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3em;
+            color: #ff4d6d;
+            animation: fadeInDown 2s;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-50px);}
+            100% { opacity: 1; transform: translateY(0);}
+        }
+
+        main {
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .bff-photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            object-fit: cover;
+            box-shadow: 0 0 30px rgba(0,0,0,0.3);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0);}
+            50% { transform: translateY(-20px);}
+        }
+
+        .message {
+            margin-top: 40px;
+            font-size: 1.5em;
+            color: #fff;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .scroll-message {
+            margin-top: 30px;
+            font-size: 1.2em;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            padding: 10px 0;
+        }
+
+        .scroll-message span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scrollText 15s linear infinite;
+        }
+
+        @keyframes scrollText {
+            0% { transform: translateX(0);}
+            100% { transform: translateX(-100%);}
+        }
+
+        .heart {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: red;
+            transform: rotate(45deg);
+            left: 50%;
+            top: 50%;
+            animation: pop 2s infinite;
+            z-index: 0;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 10px;
+            top: 0;
+        }
+
+        @keyframes pop {
+            0%, 100% { transform: scale(1) rotate(45deg);}
+            50% { transform: scale(1.5) rotate(45deg);}
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: #ff4d6d;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ff85a2;
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Khushi Nama</h1>
+        <p>To my amazing BFF, Khushi!</p>
+    </header>
+
+    <main>
+        <img src="khushi-photo.jpg" alt="Khushi" class="bff-photo">
+        <div class="message">
+            Hey Khushi! Tum meri life mein special ho. Tumhare bina life incomplete hai.<br>
+            Thanks for being an amazing friend forever!
+        </div>
+
+        <div class="scroll-message">
+            <span>💖💖 Sending all my love and happiness to Khushi! 💖💖</span>
+        </div>
+
+        <a href="#" class="btn" onclick="alert('You clicked the love button! ❤️')">Click Me 💖</a>
+    </main>
+
+    <footer>
+        Made with ❤️ by Sujal
+    </footer>
+
+    <script>
+        // Random floating hearts animation
+        for(let i=0; i<20; i++){
+            let heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = Math.random() * 100 + 'vh';
+            heart.style.animationDuration = (2 + Math.random()*3) + 's';
+            document.body.appendChild(heart);
+        }
+    </script>
+
+</body>
+</html>
